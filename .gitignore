@@ -1,0 +1,11 @@
+.idea
+
+venv
+*.sqlite3
+*.rar
+
+**/migrations/**
+!**/migrations
+!**/migrations/__init__.py
+
+templates
