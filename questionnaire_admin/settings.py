@@ -22,7 +22,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '(akzxs1c*d*b#*slrs*)!$j@4%&m)(_$o5)d8t*69ysoss(o(y'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ["*"]
 
@@ -73,16 +73,23 @@ WSGI_APPLICATION = 'questionnaire_admin.wsgi.application'
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
 DATABASES = {
+    # 'default': {
+    #     'ENGINE': 'django.db.backends.sqlite3',
+    #     'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    # },
+    # 'examination': {
+    #     'ENGINE': 'djongo',
+    #     'NAME': 'w_student',
+    #     'CLIENT': {
+    #         # 'host': 'mongodb://w_student:w_student#321@developnode.4pindia.com:27017/w_student?retryWrites=true&w=majority',
+            # 'host': 'mongodb+srv://w_quiz:GzpZkGsvXLEsNG6L@cluster0.lgcub.mongodb.net/myFirstDatabase?retryWrites=true&w=majority'
+    #     }
+    # }
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    },
-    'examination': {
         'ENGINE': 'djongo',
         'NAME': 'w_student',
         'CLIENT': {
-            # 'host': 'mongodb://w_student:w_student#321@developnode.4pindia.com:27017/w_student?retryWrites=true&w=majority',
-            'host': 'mongodb+srv://w_quiz:GzpZkGsvXLEsNG6L@cluster0.lgcub.mongodb.net/myFirstDatabase?retryWrites=true&w=majority'
+            'host': 'mongodb://admin:admin@127.0.0.1:27017/?retryWrites=true&w=majority'
         }
     }
 }
@@ -122,4 +129,4 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATIC_URL = '/static/'
-DATABASE_ROUTERS = ['routers.database.ExaminationRouter']
+# DATABASE_ROUTERS = ['routers.database.ExaminationRouter']

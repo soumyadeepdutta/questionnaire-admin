@@ -9,8 +9,8 @@ class TypeFourQuestion(models.Model):
         ('wil', 'Willingness')
     )
     text = models.CharField(help_text='Question text', max_length=150)
-    optionA = models.TextField(help_text='Option A', max_length=150)
-    optionB = models.TextField(help_text='Option B', max_length=150)
+    optionA = models.CharField(help_text='Option A', max_length=150)
+    optionB = models.CharField(help_text='Option B', max_length=150)
     question_type = models.CharField(max_length=3, choices=TYPES)
 
     class Meta:
@@ -36,7 +36,7 @@ class SectionFour(models.Model):
 # EXAM MODEL
 class Exam(models.Model):
     name = models.CharField(max_length=100)
-    scheduled_on = models.DateTimeField(default=timezone.now())
+    scheduled_on = models.DateField(default=timezone.now())
     # scheduled_by
     section_four = models.ForeignKey(SectionFour, on_delete=models.CASCADE)
 
